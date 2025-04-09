@@ -1,0 +1,22 @@
+from PIL import Image, ImageEnhance
+
+# Open an image file
+image = Image.open('dusk3.jpg')
+
+# Create an ImageEnhance object for brightness
+brightness_enhancer = ImageEnhance.Brightness(image)
+
+# Increase the brightness (factor > 1)
+brightened_image = brightness_enhancer.enhance(2.5)  # Adjust the factor as needed
+
+# Create an ImageEnhance object for contrast
+contrast_enhancer = ImageEnhance.Contrast(brightened_image)
+
+# Enhance the contrast to maintain it (factor = 1)
+contrast_image = contrast_enhancer.enhance(1.0)  # Adjust the factor if needed
+
+# Save the brightened image
+contrast_image.save('dusk_bright2.jpg')
+
+# Display the brightened image
+contrast_image.show()
